@@ -4,18 +4,17 @@
 
 void led_init()
 {
-  P1DIR |= LEDS;// bits attached to leds are output
+  P1DIR |= LEDS;		// bits attached to leds are output
   switch_state_changed = 1;
   led_update();
 }
-
 
 void led_update(){
   if(switch_state_changed){
     char ledFlags = 0; //by default, no LEDs on
 
     ledFlags |= switch_state_down ? LED_GREEN : LED_RED; //if button is pressed, turn LED Green, otherwise, LED Red
-
+    
     P1OUT &= (0xff ^ LEDS) | ledFlags; //clear bits for off leds
     P1OUT |= ledFlags; //set bits for on leds
   }
