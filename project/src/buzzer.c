@@ -25,41 +25,54 @@ void buzzer_init()
 
 void song1() {
     switch (counterForSong1) {
-        case 0:
-        case 1:
-        case 2:
-        case 3:
-        case 4:
-        case 6:
-        case 8: 
-            buzzer_set_period(950); 
-            counterForSong1++; 
-            break; // c note
-        case 5: 
-        case 7: 
-            buzzer_set_period(1130);
-            counterForSong1++;
-            break; // A note
-        case 9:
-        case 10:
-        case 11:
-        case 12:
-        case 13:
-        case 15:
-        case 17: 
-            buzzer_set_period(1000); // B note
-            if (counterForSong1 == 17) { 
-                counterForSong1 = 0 ;
-            } else {
-                counterForSong1++;
-            } 
-            break;
-        case 14:
-        case 16: 
-            buzzer_set_period(1270); // G note
-            counterForSong1++;
-            break;
-    }
+      case 0:
+	buzzer_set_period(750);
+	counterForSong1++;
+	break; //E note
+
+      case 1:
+
+      case 2:
+
+      case 11:
+
+      case 12:
+	buzzer_set_period(630);
+	counterForSong1++;
+	break; //G note
+
+      case 3:
+
+      case 4:
+
+      case 13:
+
+      case 14:
+	buzzer_set_period(560);
+	if(counterForSong1==14)
+	  {counterForSong1 = 0;}
+	else{counterForSong1++;};
+	break; //A note
+
+      case 5:
+
+      case 7:
+
+      case 9:
+	buzzer_set_period(950);
+	counterForSong1++;
+	break; //C note
+
+      case 6:
+
+      case 8:
+
+      case 10:
+	buzzer_set_period(500);
+	counterForSong1++;
+	break; //B note
+
+      }
 }
 
 void song2() {
@@ -92,25 +105,33 @@ void song2() {
 
 void song3(){
     switch (counterForSong3) {
-        case 0:
-        case 1:
-        case 2:
-        case 3: 
-            buzzer_set_period(750); 
-            counterForSong3++; 
-            break; 
-        case 4: 
-            buzzer_set_period(950); 
-            counterForSong3++; 
-            break;
-        case 5: 
-            buzzer_set_period(630);
-            counterForSong3++;
-            break; 
-        case 6:
-            buzzer_set_period(1260);
-            counterForSong3 = 0;
-            break;      
+    case 0:
+
+    case 1:
+
+    case 2:
+
+    case 4:
+      buzzer_set_period(750);
+      counterForSong3++;
+      break; //E note
+
+    case 3:
+      buzzer_set_period(950);
+      counterForSong3++;
+      break; //C note
+
+    case 5:
+      buzzer_set_period(630);
+      counterForSong3++;
+      break; //G note
+
+    case 6:
+      buzzer_set_period(1260);
+      counterForSong3 = 0;
+      break; //Lower G note
+
+       
     }
 }
 
@@ -127,7 +148,7 @@ void song4() {
         case 5:
         case 6:
         case 7: 
-            buzzer_set_period(1250);
+            buzzer_set_period(750);
             counterForSong4++;
             break;
         case 8:
@@ -135,7 +156,7 @@ void song4() {
             counterForSong4++;
             break;
         case 9: 
-            buzzer_set_period(500);
+            buzzer_set_period(800);
             counterForSong4++;
             break;
         case 10:

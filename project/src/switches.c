@@ -28,7 +28,7 @@ void switch_interrupt_handler(){
     switch_state_down = 0;
   }
   else if (!(p2val & SW1)){ // play song 1 when song 1 is pressed
-    tempo = 12;
+    tempo = 97;
     song1();
     switch_state_down = 1;
   } else if (!(p2val & SW2)) {
@@ -36,7 +36,7 @@ void switch_interrupt_handler(){
     song2();
     switch_state_down = 1;
   } else if (!(p2val & SW3)) {
-    tempo = 30;
+    tempo = 50;
     song3();
     switch_state_down = 1;
   } else if (!(p2val & SW4)) {
